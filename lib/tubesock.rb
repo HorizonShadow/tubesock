@@ -102,7 +102,7 @@ class Tubesock
 
     @active = false
   end
-  
+
   def close!
     if @socket.respond_to?(:closed?)
       @socket.close unless @socket.closed?
@@ -158,7 +158,7 @@ class Tubesock
         end
       end
     end
-  rescue Errno::EHOSTUNREACH, Errno::ETIMEDOUT, Errno::ECONNRESET, IOError, Errno::EBADF
+  rescue Errno::EHOSTUNREACH, Errno::ETIMEDOUT, Errno::ECONNRESET, IOError, Errno::EBADF, Errno::ENOTSOCK
     nil # client disconnected or timed out
   end
 end
