@@ -158,7 +158,7 @@ class Tubesock
         end
       end
     end
-  rescue Errno::EHOSTUNREACH, Errno::ETIMEDOUT, Errno::ECONNRESET, IOError, Errno::EBADF, Errno::ENOTSOCK
+  rescue Errno::EHOSTUNREACH, Errno::ETIMEDOUT, Errno::ECONNRESET, IOError, Errno::EBADF, Errno::ENOTSOCK, Errno::ECONNABORTED
     nil # client disconnected or timed out
   end
 end
